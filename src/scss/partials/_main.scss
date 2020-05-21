@@ -5,11 +5,35 @@ main{
         flex-wrap: wrap;
         justify-content: center;
     }
+    #search-input{
+        border: none;
+        border-bottom: 1px solid rgb(32, 32, 32) ;
+        background-color: transparent;
+        width: 18%;
+        font-size: 20px;
+        padding: 5px 10px;
+        margin-bottom: 20px;
+        transition: width 0.4s;
+        &:hover,
+        &:focus{
+            width: 40%;
+        }
+    }
+    .results {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .card{
+        cursor: pointer;
         background-color: rgb(32, 32, 32);
         margin: 20px;
         color: white;
         text-align: center;
+        transition: 0.4s;
+        &:hover{
+            transform: scale(1.1);
+        }
         .img-card img {
             width: 250px;
             margin: 10px ;
@@ -26,4 +50,5 @@ main{
             }
         }
     }
+        
 }

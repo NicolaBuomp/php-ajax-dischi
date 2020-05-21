@@ -1,7 +1,3 @@
-<?php 
-include_once __DIR__ . './dist/partials/database.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,27 +27,33 @@ include_once __DIR__ . './dist/partials/database.php';
         </div>
         
         <div class="container">
-            <?php
-                foreach ($album as $cd) { ?>
-            <div class="card">
-    
-                <div class="img-card">
-                    <img src="<?php echo $cd['poster']; ?>" alt="<?php echo $cd['title']; ?>">
-                </div>
-                <div class="text-card">
-                    <h2 class="title"><?php echo $cd['title']; ?></h2>
-                    <p class="sub-title"><?php echo $cd['author']; ?></p>
-                    <p class="sub-title"><?php echo $cd['year']; ?></p>
-                </div>
+
+            <div class="results">
             </div>
-            <?php }; ?>
 
         </div>
     </main>
 
 
-    <footer>
-    </footer>
+    <!-- TEMPLATE HANDLEBARS -->
+    <script id="card-template" type="text/x-handlebars-template">
+        <div class="card">
+            <div class="img-card">
+                <img src="{{imgCard}}" alt="{{titleSong}}">
+            </div>
+            <div class="text-card">
+                <h2 class="title">{{titleSong}}</h2>
+                <p class="sub-title">{{authorSong}}</p>
+                <p class="sub-title">{{yearSong}}</p>
+            </div>
+        </div>
+    </script>
+
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="dist/js/app.js"></script>
     
 </body>
 </html>

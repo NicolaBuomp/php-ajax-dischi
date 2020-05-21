@@ -12,7 +12,19 @@ let mix = require('laravel-mix');
  */
 
 mix.js('src/js/app.js', 'dist/js/')
-    .sass('src/scss/app.scss', 'dist/css/');
+    .sass('src/scss/app.scss', 'dist/css/')
+    .browserSync({
+        proxy: 'http://http://localhost:8888/php-ajax-dischi/',
+        files : [
+            "src/js/app.js",
+            "src/scss/app.scss",
+            "./**/*.php"
+        ],
+        notify: false
+    })
+    .options({
+        processCssUrls: false
+    });
 
 // Full API
 // mix.js(src, output);
